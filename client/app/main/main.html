@@ -36,6 +36,58 @@
     <img src="assets/images/carCrash.jpg" alt="When you walk your dog...">
   </div>
 
+  <div class="page-container">
+    <div class="row messages">
+      <div class="col-xs-12 col-md-12">
+        <ul class="list-group">
+          <li class="list-group-item header"><strong>Messages</strong></li>
+          <li class="list-group-item" ng-cloak ng-repeat="msg in messages  | orderBy:'date' "
+              ng-hide="msg.blocked"
+              id="{{ 'msg-' + ($last ? 'last' : $index) }}">
+            <user-message msg="msg" youtube-parser="youtubeParser"/>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="form-group">
+          <img ngf-src="files[0]" ng-if="files[0]" ngf-default-src="'/thumb.jpg'" class="pull-left" width="100%"
+               ngf-accept="'image/*'">
+        </div>
+        <div class="input-group">
+                <span class="input-group-addon"
+                      smilies-selector="newMessage.body"
+                      smilies-placement="right"
+                      smilies-title="Smilies">
+                </span>
+          <span ngf-select=""
+                ng-model="files"
+                class="upload-button ng-valid ng-dirty btn btn-info input-group-addon"
+                ngf-multiple="false"
+                ngf-accept="'*.jpg,*.jpeg,*.png,*.gif'"
+                ng-model-rejected="rejFiles" tabindex="0">
+                    <span><i class="glyphicon glyphicon-cloud-upload"></i></span>
+                </span>
+          <input class="form-control"
+                 type="text"
+                 ng-model="newMessage.body"
+                 placeholder="Geben Sie hier ..."
+                 ng-keyup="$event.keyCode === 13 && send()">
+          <span class="input-group-btn">
+                    <button class="btn btn-primary" type="button"
+                            ng-click="send()"
+                            ng-disabled="isSendDisabled()">
+                        Senden
+                    </button>
+                </span>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
 </header>
 
 <div class="container">
