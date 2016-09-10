@@ -1,11 +1,12 @@
 'use strict';
 
 import angular from 'angular';
-// import ngAnimate from 'angular-animate';
+import ngAnimate from 'angular-animate';
 import ngCookies from 'angular-cookies';
 import ngResource from 'angular-resource';
 import ngSanitize from 'angular-sanitize';
 import 'angular-socket-io';
+import pageslideDirective from 'angular-pageslide-directive';
 
 import uiRouter from 'angular-ui-router';
 import uiBootstrap from 'angular-ui-bootstrap';
@@ -31,7 +32,7 @@ import './app.css';
 
 angular.module('hackatonPeacehackRumorTrackingApp', [ngCookies, ngResource, ngSanitize,
     'btford.socket-io', uiRouter, uiBootstrap, _Auth, account, admin, navbar, footer, main,
-    constants, socket, util
+    constants, socket, util, 'pageslide-directive'
   ])
   .config(routeConfig)
   .run(function($rootScope, $location, Auth) {
