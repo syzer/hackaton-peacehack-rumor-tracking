@@ -4,7 +4,7 @@
     <div style="padding:20px" id="demo-right">
       <ul class="nav nav-pills nav-stacked" ng-repeat="room in $ctrl.rooms">
         <li style="height: 100px" ng-class="{active: $index===0}">
-          <!--<span class="glyphicon-class glyphicon glyphicon-ok"></span>-->
+          <span class="glyphicon-class glyphicon glyphicon-ok"></span>
           <div class="media">
             <div class="media-left">
               <a href="#" uib-tooltip="{{room.name}}">
@@ -18,7 +18,7 @@
             </div>
           </div>
           <button type="button" class="close" ng-click="$ctrl.setFalseRumor(room)">&times;</button>
-          <!--<span class="glyphicon-class glyphicon glyphicon-remove"></span>-->
+          <span class="glyphicon-class glyphicon glyphicon-remove"></span>
         </li>
       </ul>
       <a ng-click="toggle()" class="button">Close</a>
