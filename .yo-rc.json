@@ -16,9 +16,9 @@
     "filters": {
       "js": true,
       "babel": true,
-      "flow": true,
+      "flow": false,
       "html": true,
-      "stylus": true,
+      "css": true,
       "uirouter": true,
       "bootstrap": true,
       "uibootstrap": true,
@@ -58,7 +58,7 @@
       "babel",
       "js",
       "html",
-      "styl"
+      "css"
     ],
     "directiveSimpleTemplates": "",
     "directiveComplexTemplates": "",

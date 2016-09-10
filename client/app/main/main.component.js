@@ -3,10 +3,6 @@ import uiRouter from 'angular-ui-router';
 import routing from './main.routes';
 
 export class MainController {
-  $http;
-  socket;
-  awesomeThings = [];
-  newThing = '';
 
   /*@ngInject*/
   constructor($http, $scope, socket) {

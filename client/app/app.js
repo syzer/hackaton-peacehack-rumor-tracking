@@ -27,7 +27,7 @@ import constants from './app.constants';
 import util from '../components/util/util.module';
 import socket from '../components/socket/socket.service';
 
-import './app.styl';
+import './app.css';
 
 angular.module('hackatonPeacehackRumorTrackingApp', [ngCookies, ngResource, ngSanitize,
     'btford.socket-io', uiRouter, uiBootstrap, _Auth, account, admin, navbar, footer, main,
@@ -50,6 +50,6 @@ angular.module('hackatonPeacehackRumorTrackingApp', [ngCookies, ngResource, ngSa
 angular.element(document)
   .ready(() => {
     angular.bootstrap(document, ['hackatonPeacehackRumorTrackingApp'], {
-      strictDi: true
+      git
     });
   });

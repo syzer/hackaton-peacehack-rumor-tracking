@@ -1,24 +1,6 @@
 'use strict';
-// @flow
-
-type User = {
-  oldPassword: string;
-  newPassword: string;
-  confirmPassword: string;
-};
 
 export default class SettingsController {
-  user: User = {
-    oldPassword: '',
-    newPassword: '',
-    confirmPassword: ''
-  };
-  errors = {
-    other: undefined
-  };
-  message = '';
-  submitted = false;
-  Auth;
 
   /*@ngInject*/
   constructor(Auth) {

@@ -118,12 +118,8 @@ module.exports = function makeWebpackConfig(options) {
 
     config.babel = {
         shouldPrintComment(commentContents) {
-            let regex = DEV
-                // keep `// @flow`, `/*@ngInject*/`, & flow type comments in dev
-                ? /(@flow|@ngInject|^:)/
-                // keep `/*@ngInject*/`
-                : /@ngInject/;
-            return regex.test(commentContents);
+            // keep `/*@ngInject*/`
+            return /@ngInject/.test(commentContents);
         }
     }
 
@@ -187,17 +183,6 @@ module.exports = function makeWebpackConfig(options) {
                 // Reference: https://github.com/webpack/null-loader
                 // Skip loading css in test mode
                 : 'null'
-        }, {
-
-
-            // Stylus LOADER
-            // Reference: https://github.com/
-            test: /\.styl$/,
-            loaders: ['style', 'css', 'stylus'],
-            include: [
-                path.resolve(__dirname, 'node_modules/bootstrap-styl/bootstrap/*.styl'),
-                path.resolve(__dirname, 'client/app/app.styl')
-            ]
         }]
     };
 

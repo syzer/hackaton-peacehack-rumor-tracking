@@ -1,24 +1,8 @@
 'use strict';
-// @flow
 
 import angular from 'angular';
 
-type User = {
-  name: string;
-  email: string;
-  password: string;
-};
-
 export default class SignupController {
-  user: User = {
-    name: '',
-    email: '',
-    password: ''
-  };
-  errors = {};
-  submitted = false;
-  Auth;
-  $state;
 
   /*@ngInject*/
   constructor(Auth, $state) {

@@ -25,4 +25,3 @@ var LoginPage = function() {
 };
 
 module.exports = new LoginPage();
-

@@ -27,4 +27,3 @@ var SignupPage = function() {
 };
 
 module.exports = new SignupPage();
-
