@@ -17,7 +17,7 @@ export class MainController {
     $scope.messages = [
       {
         img: 'https://pbs.twimg.com/media/BqyHXLkCQAEE2hf.jpg',
-        text: 'All fine',
+        text: 'reader will be distracted by the readable content of a page when looking at  web page editors now use Lorem Ipsum as their default model text, and a search',
         notify: 'me',
         blocked: false,
       }
