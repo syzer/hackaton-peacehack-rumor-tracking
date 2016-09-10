@@ -1,38 +1,32 @@
 <header class="hero-unit" id="banner">
-  <pageslide ps-open="checked">
-    <div>
-      <p>some random content...</p>
-    </div>
-  </pageslide>
 
-  <div class="container">
+  <div pageslide ps-open="checked" ps-side="left" ps-push="true">
+    <div style="padding:20px" id="demo-right">
+      <ul class="nav nav-pills nav-stacked" ng-repeat="room in $ctrl.rooms">
+        <li style="height: 100px" ng-class="{active: $index===0}">
+          <!--<span class="glyphicon-class glyphicon glyphicon-ok"></span>-->
+          <div class="media">
+            <div class="media-left">
+              <a href="#" uib-tooltip="{{room.name}}">
+                <img class="media-object" alt="{{room.name}}"
+                     style="width: 64px; height: 94px;"
+                     ng-src="{{room.img}}"
+                     data-holder-rendered="true">
+              </a></div>
+            <div class="media-body"><h4 class="media-heading">{{room.headline}}</h4>
+              {{room.description}}
+            </div>
+          </div>
+          <button type="button" class="close" ng-click="$ctrl.setFalseRumor(room)">&times;</button>
+          <!--<span class="glyphicon-class glyphicon glyphicon-remove"></span>-->
+        </li>
+      </ul>
+      <a ng-click="toggle()" class="button">Close</a>
+    </div>
+  </div>
+  <div ng-if="chatting">
     <h1>Rumor app</h1>
     <a class="tiny button" href="" ng-click="toggle()">Open Sidebar</a>
-
-    <div pageslide ps-open="checked" ps-side="left" ps-push="true">
-      <div style="padding:20px" id="demo-right">
-        <ul class="nav nav-pills nav-stacked" ng-repeat="room in $ctrl.rooms">
-          <li style="height: 100px" ng-class="{active: $index===0}">
-            <!--<span class="glyphicon-class glyphicon glyphicon-ok"></span>-->
-            <div class="media">
-              <div class="media-left">
-                <a href="#" uib-tooltip="{{room.name}}">
-                  <img class="media-object" alt="{{room.name}}"
-                       style="width: 64px; height: 94px;"
-                       ng-src="{{room.img}}"
-                       data-holder-rendered="true">
-                </a></div>
-              <div class="media-body"><h4 class="media-heading">{{room.headline}}</h4>
-                {{room.description}}
-              </div>
-            </div>
-            <button type="button" class="close" ng-click="$ctrl.setFalseRumor(room)">&times;</button>
-            <!--<span class="glyphicon-class glyphicon glyphicon-remove"></span>-->
-          </li>
-        </ul>
-        <a ng-click="toggle()" class="button">Close</a>
-      </div>
-    </div>
     <img src="assets/images/carCrash.jpg" alt="When you walk your dog...">
   </div>
 
@@ -44,7 +38,7 @@
           <li class="list-group-item" ng-cloak ng-repeat="msg in messages  | orderBy:'date' "
               ng-hide="msg.blocked"
               id="{{ 'msg-' + ($last ? 'last' : $index) }}">
-            <user-message msg="msg" youtube-parser="youtubeParser"/>
+            <user-message msg="msg"/>
           </li>
         </ul>
       </div>

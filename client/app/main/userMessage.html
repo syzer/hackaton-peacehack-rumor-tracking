@@ -1,38 +1,18 @@
 <div class="message">
     <div class="media">
         <span aria-hidden="true" class="glyphicon glyphicon-user"></span>
-        {{msg.notify}} : <span ng-bind-html="msg.body | smilies"></span>
+        {{msg.notify}} : <span ng-bind-html="msg.text"></span>
 
-        <div ng-if="msg.fromImage" class="image-from embed-responsive embed-responsive-4by3">
-            <a href={{msg.fromImage}} target="blank">
+        <div ng-if="msg.img" class="image-from embed-responsive embed-responsive-4by3">
+            <a height="200" href={{msg.img}} target="blank">
                 <img src={{msg.fromImage}}
                      class="embed-responsive-item"
                      alt="Question image">
             </a>
         </div>
-        <div ng-if="youtubeParser(msg.body)"
-             class="embed-responsive embed-responsive-16by9">
-            <youtube-video class="embed-responsive-item"
-                           video-id="youtubeParser(msg.body)">
-            </youtube-video>
-        </div>
-        <div ng-if="msg.answerImage" class="image-answer embed-responsive embed-responsive-16by9">
-            <a href={{msg.answerImage}} target="blank">
-                <img src={{msg.answerImage}}
-                     class="embed-responsive-item"
-                     alt="Answer image">
-            </a>
-        </div>
     </div>
 
-    <div class="answer" ng-if="msg.answer">3plus:
-        <span ng-bind-html="msg.answer | smilies"></span>
-
-        <div ng-if="youtubeParser(msg.answer)"
-             class="embed-responsive embed-responsive-16by9">
-            <youtube-video class="embed-responsive-item"
-                           video-id="youtubeParser(msg.answer)">
-            </youtube-video>
-        </div>
+    <div class="answer" ng-if="msg.text">
+        <span ng-bind-html="msg.text"></span>
     </div>
 </div>

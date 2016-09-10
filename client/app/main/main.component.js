@@ -14,13 +14,22 @@ export class MainController {
     });
 
     //TODO socket sync updates for given room
-    $scope.messages = [];
-
+    $scope.messages = [
+      {
+        img: 'https://pbs.twimg.com/media/BqyHXLkCQAEE2hf.jpg',
+        text: 'All fine',
+        notify: 'me',
+        blocked: false,
+      }
+    ];
+    $scope.chatting = true;
     // for sliding menu
     $scope.checked = false;
-    $scope.size = '100px';
+    $scope.size = '200px';
     $scope.toggle = function () {
-      $scope.checked = !$scope.checked
+      $scope.checked = !$scope.checked;
+      //TODO fix this bug.. sometime
+      $scope.chatting = false;
     }
     $scope.mockRouteChange = function () {
       $scope.$broadcast('$locationChangeStart');
@@ -82,5 +91,14 @@ export default angular.module('hackatonPeacehackRumorTrackingApp.main', [uiRoute
   .component('main', {
     template: require('./main.html'),
     controller: MainController
+  })
+  .directive('userMessage', function () {
+    return {
+      restrict: 'E',
+      scope: {
+        msg: '=',
+      },
+      template: require('./userMessage.html')
+    };
   })
   .name;
