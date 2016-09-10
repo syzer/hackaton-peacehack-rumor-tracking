@@ -13,6 +13,9 @@ export class MainController {
       socket.unsyncUpdates('thing');
     });
 
+    //TODO socket sync updates for given room
+    $scope.messages = [];
+
     // for sliding menu
     $scope.checked = false;
     $scope.size = '100px';
@@ -22,6 +25,7 @@ export class MainController {
     $scope.mockRouteChange = function () {
       $scope.$broadcast('$locationChangeStart');
     }
+
   }
 
   $onInit() {
