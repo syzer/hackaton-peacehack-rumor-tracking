@@ -50,6 +50,6 @@ angular.module('hackatonPeacehackRumorTrackingApp', [ngCookies, ngResource, ngSa
 angular.element(document)
   .ready(() => {
     angular.bootstrap(document, ['hackatonPeacehackRumorTrackingApp'], {
-      git
+      strictDi: false
     });
   });
