@@ -14,14 +14,7 @@ export class MainController {
     });
 
     //TODO socket sync updates for given room
-    $scope.messages = [
-      {
-        img: 'https://pbs.twimg.com/media/BqyHXLkCQAEE2hf.jpg',
-        text: 'reader will be distracted by the readable content of a page when looking at  web page editors now use Lorem Ipsum as their default model text, and a search',
-        notify: 'me',
-        blocked: false,
-      }
-    ];
+    $scope.messages = [];
     $scope.chatting = true;
     // for sliding menu
     $scope.checked = false;
@@ -38,10 +31,16 @@ export class MainController {
   }
 
   $onInit() {
+    this.$http.get('/api/messages')
+      .then(response => {
+        this.messages = response.data
+        this.socket.syncUpdates('message', this.messages)
+      })
+
     this.$http.get('/api/things')
       .then(response => {
-        this.awesomeThings = response.data;
-        this.socket.syncUpdates('thing', this.awesomeThings);
+        this.awesomeThings = response.data
+        this.socket.syncUpdates('thing', this.awesomeThings)
       });
 
 

@@ -3,9 +3,22 @@
  * to disable, edit config/environment/index.js, and set `seedDB: false`
  */
 
-'use strict';
-import Thing from '../api/thing/thing.model';
-import User from '../api/user/user.model';
+import Thing from '../api/thing/thing.model'
+import User from '../api/user/user.model'
+import Message from '../api/message/message.model'
+
+Message.find({}).remove()
+  .then(() => {
+    Message.create({
+      img: 'https://pbs.twimg.com/media/BqyHXLkCQAEE2hf.jpg',
+      text: 'reader will be distracted by the readable content of a page when looking at  web page editors now use Lorem Ipsum as their default model text, and a search',
+      notify: 'me',
+      blocked: false,
+    })
+  })
+  .then(() => {
+    console.log('finished populating users')
+  })
 
 Thing.find({}).remove()
   .then(() => {
@@ -36,8 +49,8 @@ Thing.find({}).remove()
       name: 'Deployment Ready',
       info: 'Easily deploy your app to Heroku or Openshift with the heroku '
             + 'and openshift subgenerators'
-    });
-  });
+    })
+  })
 
 User.find({}).remove()
   .then(() => {
@@ -54,6 +67,6 @@ User.find({}).remove()
       password: 'admin'
     })
     .then(() => {
-      console.log('finished populating users');
-    });
-  });
+      console.log('finished populating users')
+    })
+  })
