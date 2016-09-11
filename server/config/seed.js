@@ -17,7 +17,7 @@ Message.find({}).remove()
     })
   })
   .then(() => {
-    console.log('finished populating users')
+    console.log('finished populating messages')
   })
 
 Thing.find({}).remove()
