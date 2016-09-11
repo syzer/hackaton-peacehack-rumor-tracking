@@ -11,24 +11,28 @@ Message.find({}).remove()
   .then(() => {
     Message.create(
       {
+        date: Date.now(),
         "img": "https://pbs.twimg.com/media/BqyHXLkCQAEE2hf.jpg",
         "text": "reader will be distracted by the readable content of a page when looking at  web page editors now use Lorem Ipsum as their default model text, and a search",
         "notify": "me",
         "blocked": false
       },
       {
+        date: Date.now(),
         "text": "ted by the readable content of a page when looking at  web page editors now use Lorem Ipsum as their default m",
         "notify": "me",
         "blocked": false,
         "img": "https://pbs.twimg.com/profile_images/378800000822867536/3f5a00acf72df93528b6bb7cd0a4fd0c.jpeg"
       },
       {
+        date: Date.now(),
         "text": "web page editors now use Lorem Ipsum as their default m!",
         "notify": "me",
         "blocked": false,
         "img": "http://p.fod4.com/p/media/15622856b6/5x8xefLwQaWQND3oZPvw_Simpsons Stare.gif"
       },
       {
+        date: Date.now(),
         "text": "Here's what Brexit actually means for the UK",
         "notify": "me",
         "blocked": false,
