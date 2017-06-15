@@ -1,5 +1,7 @@
 # hackaton-peacehack-rumor-tracking
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/syzer/hackaton-peacehack-rumor-tracking.svg)](https://greenkeeper.io/)
+
 This project was generated with the [Angular Full-Stack Generator](https://github.com/DaftMonk/generator-angular-fullstack) version 4.0.4.
 
 ## Getting Started
